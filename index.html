@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ozen Studio</title>
+<meta name="description" content="Ozen Studio — cozy mobile games. Home of Meow Out!">
+<style>
+  :root { --paper: #fbf6ec; --card: #fffdf8; --ink: #3e2a1f; --soft: #6b5546; --line: #e7d9c3; --accent: #e0573c; --tape: #f4c95d; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 18px 64px; text-align: center; }
+  .studio { font-weight: 800; font-size: 34px; letter-spacing: 0.5px; margin: 0; }
+  .tag { color: var(--soft); margin: 4px 0 34px; }
+  .card { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 34px 22px 26px; box-shadow: 0 2px 0 rgba(62, 42, 31, 0.06); }
+  .card::before { content: ""; position: absolute; top: -10px; left: 50%; width: 110px; height: 22px; margin-left: -55px; background: var(--tape); opacity: 0.85; transform: rotate(-2deg); border-radius: 2px; }
+  .game { color: var(--accent); font-weight: 800; font-size: 32px; margin: 0 0 6px; transform: rotate(-1.5deg); }
+  .card p { margin: 0 0 10px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 18px; }
+  .links a { text-decoration: none; color: var(--ink); background: #fff7e3; border: 1px solid #e5c77f; border-radius: 999px; padding: 7px 16px; font-weight: 600; font-size: 14px; }
+  .links a:hover, .links a:focus-visible { border-color: var(--accent); outline: none; }
+  footer { color: var(--soft); font-size: 13px; margin-top: 34px; }
+  footer a { color: #b5402a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 class="studio">Ozen Studio</h1>
+  <p class="tag">Cozy little games, made with care.</p>
+
+  <div class="card">
+    <p class="game">Meow Out!</p>
+    <p>Free the cats in the right order! A cozy paper-craft logic puzzle with 8,000 levels.</p>
+    <p lang="tr">Kedileri doğru sırayla kurtar! 8.000 bölümlük, kâğıttan sevimli bir mantık bulmacası.</p>
+    <div class="links">
+      <a href="privacy.html#en">Privacy Policy</a>
+      <a href="privacy.html#tr" lang="tr">Gizlilik Politikası</a>
+    </div>
+  </div>
+
+  <footer>
+    Contact / İletişim: <a href="mailto:tcsefaozen@gmail.com">tcsefaozen@gmail.com</a><br>
+    © 2026 Ozen Studio
+  </footer>
+</div>
+</body>
+</html>
