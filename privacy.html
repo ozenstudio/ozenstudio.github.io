@@ -97,16 +97,16 @@
 
   <section class="policy" id="tr" lang="tr">
     <h1>Gizlilik Politikası</h1>
-    <p class="date">Yürürlük tarihi: 10 Kasım 2026</p>
+    <p class="date">Yürürlük tarihi: 18 Kasım 2026</p>
 
     <p>Bu politika, Ozen Studio tarafından geliştirilen <strong>Meow Out!</strong> mobil oyununun (Android paket adı: <code>com.ozenstudio.meowout</code>) hangi bilgileri nasıl işlediğini açıklar. Oyunu kullanarak bu politikayı kabul etmiş olursun.</p>
 
-    <div class="box">Kısaca: Hesap açtırmayız; adını, e-postanı ya da telefon numaranı istemeyiz. İlerlemen yalnızca telefonunda saklanır. Oyundaki reklamları Google AdMob gösterir; AdMob reklam göstermek için cihaz bilgisi ve reklam kimliği gibi verileri işleyebilir.</div>
+    <div class="box">Kısaca: Hesap açtırmayız; adını, e-postanı ya da telefon numaranı istemeyiz. İlerlemen telefonunda saklanır. Oyundaki reklamları Google AdMob gösterir; AdMob reklam göstermek için cihaz bilgisi ve reklam kimliği gibi verileri işleyebilir. Oyunu iyileştirmek için çökme raporları ve reklam kimliği içermeyen oyun istatistikleri Google Firebase'e gönderilir.</div>
 
     <h2>1. Topladığımız bilgiler</h2>
-    <p>Ozen Studio olarak senden doğrudan kişisel veri toplamayız ve bir sunucuda saklamayız. Oyunda hesap, oturum açma, sohbet ya da satın alma yoktur.</p>
+    <p>Ozen Studio olarak senden adın, e-postan gibi doğrudan kişisel veri istemeyiz ve kendi sunucumuzda veri saklamayız. Oyunda kendi hesap sistemimiz, sohbet ya da satın alma yoktur. Aşağıda Google hizmetleri (AdMob, Google Play Oyunlar, Firebase) aracılığıyla işlenen veriler ayrıca açıklanmıştır.</p>
     <ul>
-      <li><strong>Cihazında saklanan oyun verileri:</strong> bölüm ilerlemesi, yıldızlar, altın ve bilet bakiyesi, mağaza koleksiyonu, görevler ve ayarlar yalnızca telefonunun içinde, oyunun kendi depolama alanında tutulur. Bu veriler bize gönderilmez. Oyunu silersen bu veriler de silinir.</li>
+      <li><strong>Cihazında saklanan oyun verileri:</strong> bölüm ilerlemesi, yıldızlar, altın ve bilet bakiyesi, mağaza koleksiyonu, görevler ve ayarlar yalnızca telefonunun içinde, oyunun kendi depolama alanında tutulur. Bu veriler bize gönderilmez. Oyunu silersen bu veriler de silinir. Telefonunda Android'in kendi yedekleme özelliği açıksa bu oyun verileri, Android tarafından Google hesabına yedeklenebilir.</li>
       <li><strong>İnternet bağlantısı kontrolü:</strong> oyun, bağlantının olup olmadığını anlamak için Google sunucularına kısa bir istek gönderir. Bu istek kişisel bilgi içermez; her internet isteğinde olduğu gibi IP adresin karşı sunucuya ulaşır.</li>
     </ul>
 
@@ -122,40 +122,53 @@
     <p><strong>Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'deki oyuncular</strong> için, kişiselleştirilmiş reklam ve bunun için kullanılan veriler konusunda Google'ın onay penceresiyle izin istenir. Seçimini oyunun ayarlarındaki gizlilik bölümünden istediğin zaman değiştirebilirsin.</p>
     <p>Kişiselleştirilmiş reklamları her yerde Android ayarlarından kapatabilir ya da reklam kimliğini sıfırlayabilir veya silebilirsin: <em>Ayarlar → Google → Reklamlar</em> (bazı telefonlarda <em>Ayarlar → Gizlilik → Reklamlar</em>).</p>
 
-    <h2>3. Bilgilerin paylaşılması</h2>
-    <p>Kişisel verilerini satmayız, kiralamayız ve kendimiz kimseyle paylaşmayız. Yukarıda açıklanan reklam verileri doğrudan Google AdMob tarafından işlenir.</p>
+    <h2>3. Google Play Oyunlar</h2>
+    <p>Oyun, başarımlar için <strong>Google Play Oyunlar</strong> hizmetini kullanır. Telefonunda Play Oyunlar profilinle oturum açıksa oyun açıldığında otomatik olarak bağlanır ve başarımlardaki ilerlemen Google hesabına kaydedilir. Bu veriler Google tarafından işlenir; Play Oyunlar profilini ve görünürlük ayarlarını Play Oyunlar uygulamasından yönetebilirsin. Oturum açmazsan oyun normal şekilde çalışır, yalnızca başarımlar eşitlenmez.</p>
+    <h2>4. Çökme raporları ve oyun istatistikleri (Google Firebase)</h2>
+    <p>Hataları bulup düzeltmek ve oyunu iyileştirmek için Google LLC'nin <strong>Firebase</strong> hizmetlerini kullanırız:</p>
+    <ul>
+      <li><strong>Firebase Crashlytics (çökme ve hata raporları):</strong> oyun çöktüğünde ya da bir hata oluştuğunda; cihaz modeli, Android sürümü, oyun sürümü, hatanın oluştuğu yer, o sırada oynanan bölüm ve rastgele oluşturulmuş bir kurulum kimliği gönderilir.</li>
+      <li><strong>Firebase Analytics (oyun istatistikleri):</strong> bölüm başlangıcı ve bitişi (kazanma/kaybetme, yıldız), ödüllü video izlenmesi, paylaşım gibi oyun olayları, oturum süresi, cihaz ve sistem bilgileri, yaklaşık konum (ülke/şehir düzeyinde) ve rastgele oluşturulmuş bir uygulama kurulum kimliği gönderilir. <strong>Reklam kimliği toplanmaz</strong> ve bu veriler reklam ya da kişiselleştirilmiş reklam amacıyla kullanılmaz. Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre'de oyun istatistikleri gönderilmez.</li>
+    </ul>
+    <p>Bu veriler Google tarafından, <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase'in gizlilik ve güvenlik koşullarına</a> göre işlenir. Crashlytics verileri en fazla 90 gün, Analytics verileri en fazla 14 ay saklanır.</p>
+    <h2>5. Bildirimler</h2>
+    <p>İzin verirsen oyun, günlük ödül ve görev hatırlatmaları gibi bildirimleri doğrudan telefonunda kurar. Bunun için hiçbir veri bize ya da başka bir sunucuya gönderilmez. Bildirimleri oyunun ayarlarından ya da Android ayarlarından istediğin zaman kapatabilirsin.</p>
+    <h2>6. Paylaşım</h2>
+    <p>Oyundaki "Paylaş" özelliği, oyun görselini telefonunda oluşturur ve yalnızca senin seçtiğin uygulamaya (örneğin WhatsApp, Instagram) gönderir. Bu paylaşım bizim üzerimizden geçmez; paylaştığın uygulamanın kendi gizlilik koşulları geçerlidir.</p>
+    <h2>7. Bilgilerin paylaşılması</h2>
+    <p>Kişisel verilerini satmayız, kiralamayız ve kendimiz kimseyle paylaşmayız. Yukarıda açıklanan veriler doğrudan Google (AdMob, Google Play Oyunlar, Firebase) tarafından işlenir.</p>
 
-    <h2>4. Çocuklar</h2>
+    <h2>8. Çocuklar</h2>
     <p>Meow Out! 13 yaşın altındaki çocuklara yönelik değildir ve bu yaştaki çocuklardan bilerek kişisel veri toplamayız. Çocuğunun oyunu kullandığını ve veri paylaşıldığını düşünüyorsan bizimle iletişime geç; gerekli adımları atarız.</p>
 
-    <h2>5. Güvenlik ve saklama süresi</h2>
-    <p>Oyun verilerin yalnızca cihazında, oyunu silene ya da oyun içinden sıfırlayana kadar saklanır. Reklam verileri Google tarafından şifreli bağlantı (HTTPS) üzerinden iletilir ve Google'ın saklama kurallarına tabidir.</p>
+    <h2>9. Güvenlik ve saklama süresi</h2>
+    <p>Oyun verilerin cihazında, oyunu silene ya da oyun içinden sıfırlayana kadar saklanır. Reklam, Play Oyunlar ve Firebase verileri Google tarafından şifreli bağlantı (HTTPS) üzerinden iletilir ve Google'ın saklama kurallarına tabidir.</p>
 
-    <h2>6. Hakların</h2>
-    <p>Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) gibi düzenlemeler kapsamında verilerine erişme, düzeltme, silme ve işlemeye itiraz etme hakların vardır. Biz kişisel verilerini sunucumuzda tutmadığımız için oyunla ilgili verileri cihazından silmen yeterlidir; reklam verileriyle ilgili talepler için Google'ın araçlarını (<a href="https://myadcenter.google.com" rel="noopener">Reklam Merkezim</a>) kullanabilir ya da bize yazabilirsin.</p>
+    <h2>10. Hakların</h2>
+    <p>Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) gibi düzenlemeler kapsamında verilerine erişme, düzeltme, silme ve işlemeye itiraz etme hakların vardır. Biz kişisel verilerini sunucumuzda tutmadığımız için oyunla ilgili verileri cihazından silmen yeterlidir; reklam verileriyle ilgili talepler için Google'ın araçlarını (<a href="https://myadcenter.google.com" rel="noopener">Reklam Merkezim</a>) kullanabilirsin. Çökme raporlarının ve oyun istatistiklerinin silinmesini istersen bize yaz; Google'ın sunduğu araçlarla silinmesini sağlarız.</p>
 
-    <h2>7. İzinler</h2>
-    <p>Oyun yalnızca internet erişimi (reklamlar ve bağlantı kontrolü için), titreşim (dokunuş geri bildirimi) ve reklam kimliği izinlerini kullanır. Kamera, mikrofon, rehber, konum (GPS) ya da dosyalarına erişmez.</p>
+    <h2>11. İzinler</h2>
+    <p>Oyun yalnızca internet erişimi (reklamlar, Play Oyunlar, Firebase ve bağlantı kontrolü için), titreşim (dokunuş geri bildirimi), bildirim (hatırlatmalar, yalnızca izin verirsen) ve reklam kimliği izinlerini kullanır. Kamera, mikrofon, rehber, konum (GPS) ya da dosyalarına erişmez.</p>
 
-    <h2>8. Değişiklikler</h2>
+    <h2>12. Değişiklikler</h2>
     <p>Bu politikayı zaman zaman güncelleyebiliriz. Güncel sürüm her zaman bu sayfada, yürürlük tarihiyle birlikte yayımlanır.</p>
 
-    <h2>9. İletişim</h2>
+    <h2>13. İletişim</h2>
     <p>Sorular ve talepler için: <strong>Ozen Studio</strong> — <a href="mailto:tcsefaozen@gmail.com">tcsefaozen@gmail.com</a></p>
   </section>
 
   <section class="policy" id="en" lang="en">
     <h1>Privacy Policy</h1>
-    <p class="date">Effective date: November 10, 2026</p>
+    <p class="date">Effective date: November 18, 2026</p>
 
     <p>This policy explains what information the <strong>Meow Out!</strong> mobile game (Android package name: <code>com.ozenstudio.meowout</code>), developed by Ozen Studio, handles and how. By using the game you agree to this policy.</p>
 
-    <div class="box">In short: there are no accounts, and we never ask for your name, email or phone number. Your progress is stored only on your phone. Ads in the game are served by Google AdMob, which may process data such as device information and the advertising ID to show ads.</div>
+    <div class="box">In short: there are no accounts, and we never ask for your name, email or phone number. Your progress is stored on your phone. Ads in the game are served by Google AdMob, which may process data such as device information and the advertising ID to show ads. To improve the game, crash reports and game statistics that do not include the advertising ID are sent to Google Firebase.</div>
 
     <h2>1. Information we collect</h2>
-    <p>Ozen Studio does not collect personal data from you directly and does not store any on a server. The game has no accounts, sign-in, chat or purchases.</p>
+    <p>Ozen Studio does not ask you for personal data such as your name or email and does not store any data on its own server. The game has no account system of its own, no chat and no purchases. Data processed through Google services (AdMob, Google Play Games, Firebase) is described separately below.</p>
     <ul>
-      <li><strong>Game data stored on your device:</strong> level progress, stars, coin and ticket balances, your shop collection, quests and settings are kept only on your phone, in the game's own storage. They are never sent to us. Uninstalling the game deletes them.</li>
+      <li><strong>Game data stored on your device:</strong> level progress, stars, coin and ticket balances, your shop collection, quests and settings are kept only on your phone, in the game's own storage. They are never sent to us. Uninstalling the game deletes them. If Android's own backup feature is turned on on your phone, Android may back up this game data to your Google account.</li>
       <li><strong>Internet connection check:</strong> the game sends a short request to Google servers to find out whether you are online. The request contains no personal information; as with any internet request, your IP address reaches the server.</li>
     </ul>
 
@@ -171,25 +184,38 @@
     <p><strong>Players in the European Economic Area, the United Kingdom and Switzerland</strong> are asked for consent, through Google's consent message, about personalised ads and the data used for them. You can change your choice at any time in the privacy section of the game's settings.</p>
     <p>Anywhere, you can turn off personalised ads or reset or delete your advertising ID in Android settings: <em>Settings → Google → Ads</em> (on some phones <em>Settings → Privacy → Ads</em>).</p>
 
-    <h2>3. Sharing of information</h2>
-    <p>We do not sell, rent or share your personal data ourselves. The advertising data described above is processed directly by Google AdMob.</p>
+    <h2>3. Google Play Games</h2>
+    <p>The game uses <strong>Google Play Games</strong> for achievements. If you are signed in with your Play Games profile on your phone, the game connects automatically when it starts and your achievement progress is saved to your Google account. This data is processed by Google; you can manage your Play Games profile and its visibility in the Play Games app. If you don't sign in, the game works normally; only achievements are not synced.</p>
+    <h2>4. Crash reports and game statistics (Google Firebase)</h2>
+    <p>To find and fix errors and to improve the game, we use <strong>Firebase</strong> services of Google LLC:</p>
+    <ul>
+      <li><strong>Firebase Crashlytics (crash and error reports):</strong> when the game crashes or an error occurs, the device model, Android version, game version, where the error happened, the level being played and a randomly generated installation ID are sent.</li>
+      <li><strong>Firebase Analytics (game statistics):</strong> game events such as level start and end (win/lose, stars), rewarded video views and shares, session length, device and system information, approximate location (country/city level) and a randomly generated app instance ID are sent. <strong>The advertising ID is not collected</strong>, and this data is not used for advertising or personalised ads. Game statistics are not sent in the European Economic Area, the United Kingdom and Switzerland.</li>
+    </ul>
+    <p>This data is processed by Google under <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase's privacy and security terms</a>. Crashlytics data is kept for up to 90 days and Analytics data for up to 14 months.</p>
+    <h2>5. Notifications</h2>
+    <p>If you allow it, the game schedules notifications such as daily reward and quest reminders directly on your phone. No data is sent to us or to any server for this. You can turn notifications off at any time in the game's settings or in Android settings.</p>
+    <h2>6. Sharing</h2>
+    <p>The in-game "Share" feature creates the image on your phone and sends it only to the app you choose (for example WhatsApp or Instagram). Sharing does not go through us; the privacy terms of the app you share to apply.</p>
+    <h2>7. Sharing of information</h2>
+    <p>We do not sell, rent or share your personal data ourselves. The data described above is processed directly by Google (AdMob, Google Play Games, Firebase).</p>
 
-    <h2>4. Children</h2>
+    <h2>8. Children</h2>
     <p>Meow Out! is not directed at children under 13, and we do not knowingly collect personal data from children of that age. If you believe your child has used the game and shared data, please contact us and we will take the appropriate steps.</p>
 
-    <h2>5. Security and retention</h2>
-    <p>Your game data stays only on your device until you uninstall the game or reset it in the game. Advertising data is transmitted by Google over encrypted connections (HTTPS) and is subject to Google's retention practices.</p>
+    <h2>9. Security and retention</h2>
+    <p>Your game data stays on your device until you uninstall the game or reset it in the game. Advertising, Play Games and Firebase data is transmitted by Google over encrypted connections (HTTPS) and is subject to Google's retention practices.</p>
 
-    <h2>6. Your rights</h2>
-    <p>Under laws such as the EU General Data Protection Regulation (GDPR) and Turkey's Personal Data Protection Law (KVKK), you have the right to access, correct and delete your data and to object to its processing. Because we do not keep your personal data on any server, deleting the game data from your device is enough for game data; for advertising data you can use Google's tools (<a href="https://myadcenter.google.com" rel="noopener">My Ad Center</a>) or write to us.</p>
+    <h2>10. Your rights</h2>
+    <p>Under laws such as the EU General Data Protection Regulation (GDPR) and Turkey's Personal Data Protection Law (KVKK), you have the right to access, correct and delete your data and to object to its processing. Because we do not keep your personal data on any server, deleting the game data from your device is enough for game data; for advertising data you can use Google's tools (<a href="https://myadcenter.google.com" rel="noopener">My Ad Center</a>). If you want crash reports and game statistics deleted, write to us and we will have them deleted using the tools Google provides.</p>
 
-    <h2>7. Permissions</h2>
-    <p>The game only uses internet access (for ads and the connection check), vibration (haptic feedback) and the advertising ID permission. It does not access your camera, microphone, contacts, location (GPS) or files.</p>
+    <h2>11. Permissions</h2>
+    <p>The game only uses internet access (for ads, Play Games, Firebase and the connection check), vibration (haptic feedback), notifications (reminders, only if you allow them) and the advertising ID permission. It does not access your camera, microphone, contacts, location (GPS) or files.</p>
 
-    <h2>8. Changes</h2>
+    <h2>12. Changes</h2>
     <p>We may update this policy from time to time. The current version is always published on this page together with its effective date.</p>
 
-    <h2>9. Contact</h2>
+    <h2>13. Contact</h2>
     <p>For questions and requests: <strong>Ozen Studio</strong> — <a href="mailto:tcsefaozen@gmail.com">tcsefaozen@gmail.com</a></p>
   </section>
 
