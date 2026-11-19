@@ -1,47 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ozen Studio</title>
-<meta name="description" content="Ozen Studio — cozy mobile games. Home of Meow Out!">
+<title>Ozen Studio — Meow Out!</title>
+<meta name="description" content="Ozen Studio: özenle yapılmış sevimli mobil oyunlar. Meow Out! — 8.000 bölümlük kâğıttan kedi bulmacası. Cozy mobile games made with care.">
+<meta name="theme-color" content="#0b1022">
+<meta property="og:title" content="Ozen Studio — Meow Out!">
+<meta property="og:description" content="Kedileri doğru sırayla çıkar! 8.000 bölümlük, kâğıttan sevimli bir mantık bulmacası.">
+<meta property="og:image" content="https://ozenstudio.github.io/assets/feature-tr.webp">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon-64.png">
 <style>
-  :root { --paper: #fbf6ec; --card: #fffdf8; --ink: #3e2a1f; --soft: #6b5546; --line: #e7d9c3; --accent: #e0573c; --tape: #f4c95d; }
+  @font-face { font-family: "Baloo 2"; src: url(assets/fonts/baloo2.woff) format("woff"); font-weight: 400 800; font-display: swap; }
+  @font-face { font-family: "Lora"; src: url(assets/fonts/lora-italic-600.woff) format("woff"); font-style: italic; font-weight: 600; font-display: swap; }
+  @font-face { font-family: "Orbitron"; src: url(assets/fonts/Orbitron-VF.ttf) format("truetype"); font-weight: 400 900; font-display: swap; }
+
+  :root {
+    --night: #0b1022; --night2: #121a36; --steel: #c9d3e6; --glow: #3d7bff; --glow2: #7fb2ff;
+    --paper: #f8efdd; --card: #fffaf0; --ink: #4a2f22; --soft: #7a5c48; --line: #ead9bd;
+    --orange: #f59b2a; --red: #e0573c; --tape: #f4c95d; --sky: #bfe3f5;
+  }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 18px 64px; text-align: center; }
-  .studio { font-weight: 800; font-size: 34px; letter-spacing: 0.5px; margin: 0; }
-  .tag { color: var(--soft); margin: 4px 0 34px; }
-  .card { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 34px 22px 26px; box-shadow: 0 2px 0 rgba(62, 42, 31, 0.06); }
-  .card::before { content: ""; position: absolute; top: -10px; left: 50%; width: 110px; height: 22px; margin-left: -55px; background: var(--tape); opacity: 0.85; transform: rotate(-2deg); border-radius: 2px; }
-  .game { color: var(--accent); font-weight: 800; font-size: 32px; margin: 0 0 6px; transform: rotate(-1.5deg); }
-  .card p { margin: 0 0 10px; }
-  .links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 18px; }
-  .links a { text-decoration: none; color: var(--ink); background: #fff7e3; border: 1px solid #e5c77f; border-radius: 999px; padding: 7px 16px; font-weight: 600; font-size: 14px; }
-  .links a:hover, .links a:focus-visible { border-color: var(--accent); outline: none; }
-  footer { color: var(--soft); font-size: 13px; margin-top: 34px; }
-  footer a { color: #b5402a; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; color: var(--ink); background: var(--paper); font: 17px/1.6 "Baloo 2", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+
+  /* Dil: <html data-lang> hangi dilse yalnız o dilin metni görünür */
+  html[data-lang="tr"] .en, html[data-lang="en"] .tr { display: none !important; }
+
+  /* ---------- Üst: stüdyo (koyu) ---------- */
+  .top {
+    position: relative; color: #e8eefc; overflow: hidden;
+    background:
+      radial-gradient(ellipse 60% 70% at 78% 30%, rgba(61, 123, 255, 0.28), transparent 70%),
+      radial-gradient(ellipse 40% 50% at 10% 90%, rgba(127, 178, 255, 0.12), transparent 70%),
+      linear-gradient(160deg, var(--night2), var(--night) 60%);
+  }
+  .top::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.18;
+    background: repeating-linear-gradient(118deg, transparent 0 38px, rgba(127, 178, 255, 0.18) 38px 39px, transparent 39px 120px);
+  }
+  .nav { position: relative; max-width: 1080px; margin: 0 auto; padding: 18px 22px; display: flex; align-items: center; gap: 18px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand img { width: 48px; height: 48px; border-radius: 12px; }
+  .brand b { font: 800 17px/1 "Orbitron", system-ui, sans-serif; letter-spacing: 3px; color: #eef3ff; }
+  .nav .links { margin-left: auto; display: flex; gap: 22px; align-items: center; }
+  .nav .links a { text-decoration: none; color: var(--steel); font-weight: 600; font-size: 15px; }
+  .nav .links a:hover, .nav .links a:focus-visible { color: #fff; }
+  .lang { display: inline-flex; border: 1px solid rgba(201, 211, 230, 0.35); border-radius: 999px; overflow: hidden; }
+  .lang button { background: none; border: 0; color: var(--steel); font: 700 13px/1 "Baloo 2", sans-serif; padding: 7px 11px; cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--glow); color: #fff; }
+
+  .hero { position: relative; max-width: 1080px; margin: 0 auto; padding: 46px 22px 120px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+  .hero h1 { margin: 0 0 14px; font: 800 clamp(34px, 5.2vw, 56px)/1.08 "Baloo 2", sans-serif; color: #fff; }
+  .hero h1 .hl { background: linear-gradient(90deg, var(--glow2), #d8e6ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p { margin: 0 0 26px; color: var(--steel); font-size: 19px; max-width: 34em; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; border-radius: 999px; padding: 12px 24px; font-size: 17px; }
+  .btn-glow { background: var(--glow); color: #fff; box-shadow: 0 8px 28px rgba(61, 123, 255, 0.45); }
+  .btn-glow:hover, .btn-glow:focus-visible { background: #5a90ff; outline: none; }
+  .logo-big { justify-self: center; width: min(360px, 80%); border-radius: 28px; box-shadow: 0 0 0 1px rgba(127, 178, 255, 0.25), 0 30px 80px rgba(61, 123, 255, 0.35); }
+
+  /* Kâğıt kenarı: koyu bölümden kâğıda yırtık geçiş */
+  .tear { position: absolute; left: 0; right: 0; bottom: -1px; height: 60px; width: 100%; }
+
+  /* ---------- Oyun (kâğıt) ---------- */
+  .paper { background: url(assets/grain.webp), var(--paper); background-size: 256px; }
+  .game { max-width: 1080px; margin: 0 auto; padding: 40px 22px 30px; }
+  .eyebrow { text-align: center; margin: 0; font: italic 600 18px/1.3 "Lora", Georgia, serif; color: var(--soft); }
+  .game h2 { text-align: center; margin: 2px 0 34px; font: 800 clamp(28px, 4vw, 40px)/1.1 "Baloo 2", sans-serif; }
+  .showcase { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; }
+  .taped { position: relative; background: var(--card); padding: 12px; border-radius: 14px; box-shadow: 0 3px 0 rgba(74, 47, 34, 0.08), 0 18px 40px rgba(74, 47, 34, 0.12); transform: rotate(-1.2deg); }
+  .taped::before, .taped::after { content: ""; position: absolute; top: -14px; width: 120px; height: 28px; background: var(--tape); opacity: 0.88; border-radius: 3px; }
+  .taped::before { left: 18px; transform: rotate(-6deg); }
+  .taped::after { right: 18px; transform: rotate(5deg); background: #f3a3b5; }
+  .taped img { border-radius: 8px; }
+  .info .head { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+  .info .icon { width: 86px; height: 86px; border-radius: 22px; box-shadow: 0 6px 18px rgba(74, 47, 34, 0.25); }
+  .info h3 { margin: 0; font: 800 34px/1 "Baloo 2", sans-serif; }
+  .info h3 em { font-style: normal; color: var(--orange); }
+  .info .sub { margin: 4px 0 0; font: italic 600 16px/1.2 "Lora", Georgia, serif; color: var(--soft); }
+  .info p { margin: 14px 0; }
+  .feats { list-style: none; margin: 0 0 22px; padding: 0; }
+  .feats li { position: relative; padding-left: 30px; margin: 6px 0; }
+  .feats li::before { content: ""; position: absolute; left: 0; top: 6px; width: 18px; height: 18px; background: var(--orange); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cellipse cx='12' cy='16' rx='6' ry='5'/%3E%3Ccircle cx='5' cy='9' r='2.6'/%3E%3Ccircle cx='9.5' cy='5' r='2.6'/%3E%3Ccircle cx='14.5' cy='5' r='2.6'/%3E%3Ccircle cx='19' cy='9' r='2.6'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cellipse cx='12' cy='16' rx='6' ry='5'/%3E%3Ccircle cx='5' cy='9' r='2.6'/%3E%3Ccircle cx='9.5' cy='5' r='2.6'/%3E%3Ccircle cx='14.5' cy='5' r='2.6'/%3E%3Ccircle cx='19' cy='9' r='2.6'/%3E%3C/svg%3E") center / contain no-repeat; }
+  .soon { display: inline-flex; align-items: center; gap: 12px; background: #1d1d1d; color: #fff; border-radius: 12px; padding: 10px 18px 10px 14px; }
+  .soon svg { width: 28px; height: 28px; flex: none; }
+  .soon small { display: block; font-size: 12px; line-height: 1.1; opacity: 0.8; }
+  .soon b { display: block; font-size: 19px; line-height: 1.1; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn-paper { background: #fff3d6; color: var(--ink); border: 2px solid #e5c77f; padding: 9px 18px; font-size: 15px; }
+  .btn-paper:hover, .btn-paper:focus-visible { border-color: var(--red); outline: none; }
+
+  /* Ekran görüntüleri: yatay kaydırmalı şerit */
+  .shots-wrap { position: relative; margin-top: 46px; }
+  .shots { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 8px 22px 26px; max-width: 1080px; margin: 0 auto; scrollbar-width: thin; }
+  .shots figure { margin: 0; flex: 0 0 auto; width: clamp(170px, 22vw, 230px); scroll-snap-align: start; }
+  .shots img { border-radius: 18px; box-shadow: 0 4px 0 rgba(74, 47, 34, 0.1), 0 14px 30px rgba(74, 47, 34, 0.18); aspect-ratio: 9 / 16; width: 100%; object-fit: cover; }
+  .shots figcaption { text-align: center; font-size: 14px; color: var(--soft); margin-top: 8px; line-height: 1.3; }
+
+  /* ---------- Bilgi kartları ---------- */
+  .cards { max-width: 1080px; margin: 0 auto; padding: 10px 22px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; box-shadow: 0 2px 0 rgba(74, 47, 34, 0.06); }
+  .card h4 { margin: 0 0 6px; font-size: 20px; }
+  .card p { margin: 0 0 12px; color: var(--soft); font-size: 16px; }
+  .card a.more { color: var(--red); font-weight: 700; text-decoration: none; }
+  .card a.more:hover { text-decoration: underline; }
+
+  /* ---------- Alt ---------- */
+  footer { background: var(--night); color: var(--steel); }
+  .foot { max-width: 1080px; margin: 0 auto; padding: 28px 22px; display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; font-size: 14px; }
+  .foot .brand img { width: 36px; height: 36px; border-radius: 9px; }
+  .foot .brand b { font-size: 14px; }
+  .foot nav { display: flex; gap: 18px; flex-wrap: wrap; }
+  .foot a { color: var(--steel); text-decoration: none; }
+  .foot a:hover { color: #fff; }
+  .foot .copy { margin-left: auto; opacity: 0.7; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; text-align: center; padding-top: 22px; }
+    .hero p { margin-left: auto; margin-right: auto; }
+    .logo-big { width: min(260px, 70%); grid-row: 1; }
+    .showcase { grid-template-columns: 1fr; }
+    .cards { grid-template-columns: 1fr; }
+    .nav .links a.hide-sm { display: none; }
+    .foot .copy { margin-left: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
+<script>
+  // Dil seçimi: kayıtlı seçim, yoksa tarayıcı dili (Türkçe değilse İngilizce)
+  (function () {
+    var l = null;
+    try { l = localStorage.getItem('ozen-lang'); } catch (e) {}
+    if (l !== 'tr' && l !== 'en') l = /^tr\b/i.test(navigator.language || '') ? 'tr' : 'en';
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.lang = l;
+  })();
+</script>
 </head>
 <body>
-<div class="wrap">
-  <h1 class="studio">Ozen Studio</h1>
-  <p class="tag">Cozy little games, made with care.</p>
 
-  <div class="card">
-    <p class="game">Meow Out!</p>
-    <p>Free the cats in the right order! A cozy paper-craft logic puzzle with 8,000 levels.</p>
-    <p lang="tr">Kedileri doğru sırayla kurtar! 8.000 bölümlük, kâğıttan sevimli bir mantık bulmacası.</p>
+<header class="top">
+  <nav class="nav" aria-label="Ana menü">
+    <a class="brand" href="#">
+      <img src="assets/ozen-studio-logo.webp" alt="" width="48" height="48">
+      <b>OZEN STUDIO</b>
+    </a>
     <div class="links">
-      <a href="privacy.html#en">Privacy Policy</a>
-      <a href="privacy.html#tr" lang="tr">Gizlilik Politikası</a>
+      <a href="#oyunlar" class="hide-sm"><span class="tr">Oyunlar</span><span class="en">Games</span></a>
+      <a href="#destek" class="hide-sm"><span class="tr">Destek</span><span class="en">Support</span></a>
+      <div class="lang" role="group" aria-label="Dil / Language">
+        <button type="button" data-set="tr">TR</button>
+        <button type="button" data-set="en">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <h1>
+        <span class="tr">Özenle yapılmış, <span class="hl">sevimli</span> mobil oyunlar.</span>
+        <span class="en">Cozy mobile games, <span class="hl">made with care</span>.</span>
+      </h1>
+      <p>
+        <span class="tr">Ozen Studio, her yaştan oyuncunun keyifle oynayacağı, sade ve tatlı oyunlar yapan bağımsız bir stüdyo. İlk oyunumuz Meow Out! çok yakında Google Play'de.</span>
+        <span class="en">Ozen Studio is an independent studio making simple, charming games for players of all ages. Our first game, Meow Out!, is coming soon to Google Play.</span>
+      </p>
+      <a class="btn btn-glow" href="#oyunlar">
+        <span class="tr">Meow Out!'u keşfet</span><span class="en">Discover Meow Out!</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <img class="logo-big" src="assets/ozen-studio-logo.webp" alt="Ozen Studio" width="512" height="512">
+  </div>
+
+  <svg class="tear" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 34 L60 28 L120 38 L190 26 L250 36 L320 24 L390 35 L450 27 L520 39 L590 25 L650 34 L720 28 L790 38 L860 24 L930 36 L990 27 L1060 37 L1130 25 L1190 35 L1260 26 L1330 37 L1390 29 L1440 33 L1440 60 L0 60 Z" fill="#f8efdd"/>
+  </svg>
+</header>
+
+<main class="paper">
+  <section class="game" id="oyunlar">
+    <p class="eyebrow"><span class="tr">İlk oyunumuz</span><span class="en">Our first game</span></p>
+    <h2><span class="tr">Kediler dışarı çıkmak istiyor!</span><span class="en">The cats want to go outside!</span></h2>
+
+    <div class="showcase">
+      <div class="taped">
+        <img class="tr" src="assets/feature-tr.webp" alt="Meow Out! — Sevimli kedi bulmacası" width="1024" height="500">
+        <img class="en" src="assets/feature-en.webp" alt="Meow Out! — Cute cat puzzle" width="1024" height="500">
+      </div>
+
+      <div class="info">
+        <div class="head">
+          <img class="icon" src="assets/meowout-icon.webp" alt="" width="384" height="384">
+          <div>
+            <h3>Meow <em>Out!</em></h3>
+            <p class="sub">Cats Outside</p>
+          </div>
+        </div>
+        <p>
+          <span class="tr">Kedileri doğru sırayla çıkar! Dokun, kedi baktığı yöne kaysın. Her hamle bir sonrakinin yolunu açar.</span>
+          <span class="en">Slide the cats out in the right order! Tap a cat and it slides the way it faces. Every move clears the way for the next.</span>
+        </p>
+        <ul class="feats">
+          <li><span class="tr">8 diyarda 8.000 bölüm</span><span class="en">8,000 levels across 8 lands</span></li>
+          <li><span class="tr">Kendi kedini tasarla, 4 aksesuara kadar tak</span><span class="en">Design your own cat and wear up to 4 accessories</span></li>
+          <li><span class="tr">Günlük görevler, giriş ödülü ve sandıklar</span><span class="en">Daily quests, login rewards and chests</span></li>
+          <li><span class="tr">Kâğıttan sevimli bir dünya ve neşeli müzikler</span><span class="en">A cozy paper-craft world with cheerful music</span></li>
+        </ul>
+        <div class="cta-row">
+          <div class="soon" role="note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="#f59b2a" stroke-width="2.4"/><path d="M12 7v5.2l3.4 2" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span><small><span class="tr">Çok yakında</span><span class="en">Coming soon</span></small><b>Google Play</b></span>
+          </div>
+          <a class="btn btn-paper" href="privacy.html"><span class="tr">Gizlilik Politikası</span><span class="en">Privacy Policy</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="shots-wrap">
+    <div class="shots" tabindex="0" aria-label="Meow Out! ekran görüntüleri / screenshots">
+      <figure><img class="tr" src="assets/shots/tr-01.webp" alt="Kedileri doğru sırayla çıkar!" width="540" height="960" loading="lazy"><img class="en" src="assets/shots/en-01.webp" alt="Slide the cats out in order!" width="540" height="960" loading="lazy"><figcaption><span class="tr">Kedileri sırayla çıkar</span><span class="en">Slide cats out in order</span></figcaption></figure>
+      <figure><img class="tr" src="assets/shots/tr-02.webp" alt="Tek doğru kediyi bul!" width="540" height="960" loading="lazy"><img class="en" src="assets/shots/en-02.webp" alt="Find the one right cat!" width="540" height="960" loading="lazy"><figcaption><span class="tr">Tek doğru kediyi bul</span><span class="en">Find the one right cat</span></figcaption></figure>
+      <figure><img class="tr" src="assets/shots/tr-03.webp" alt="8.000 bölümlük macera" width="540" height="960" loading="lazy"><img class="en" src="assets/shots/en-03.webp" alt="8,000 levels to explore" width="540" height="960" loading="lazy"><figcaption><span class="tr">8.000 bölüm, 8 diyar</span><span class="en">8,000 levels, 8 lands</span></figcaption></figure>
+      <figure><img class="tr" src="assets/shots/tr-04.webp" alt="Kendi kedini tasarla!" width="540" height="960" loading="lazy"><img class="en" src="assets/shots/en-04.webp" alt="Design your own cat!" width="540" height="960" loading="lazy"><figcaption><span class="tr">Kendi kedini tasarla</span><span class="en">Design your own cat</span></figcaption></figure>
+      <figure><img class="tr" src="assets/shots/tr-05.webp" alt="4 aksesuarı birden tak!" width="540" height="960" loading="lazy"><img class="en" src="assets/shots/en-05.webp" alt="Wear up to 4 accessories!" width="540" height="960" loading="lazy"><figcaption><span class="tr">4 aksesuara kadar</span><span class="en">Up to 4 accessories</span></figcaption></figure>
+      <figure><img class="tr" src="assets/shots/tr-06.webp" alt="Kaçışa renk kat!" width="540" height="960" loading="lazy"><img class="en" src="assets/shots/en-06.webp" alt="Escape in style!" width="540" height="960" loading="lazy"><figcaption><span class="tr">Kaçışa renk kat</span><span class="en">Escape in style</span></figcaption></figure>
+      <figure><img class="tr" src="assets/shots/tr-07.webp" alt="Her gün yeni ödüller" width="540" height="960" loading="lazy"><img class="en" src="assets/shots/en-07.webp" alt="Rewards every day" width="540" height="960" loading="lazy"><figcaption><span class="tr">Her gün yeni ödüller</span><span class="en">Rewards every day</span></figcaption></figure>
+      <figure><img class="tr" src="assets/shots/tr-08.webp" alt="Kâğıttan sevimli bir dünya" width="540" height="960" loading="lazy"><img class="en" src="assets/shots/en-08.webp" alt="A cosy paper-craft world" width="540" height="960" loading="lazy"><figcaption><span class="tr">Kâğıttan bir dünya</span><span class="en">A paper-craft world</span></figcaption></figure>
     </div>
   </div>
 
-  <footer>
-    Contact / İletişim: <a href="mailto:tcsefaozen@gmail.com">tcsefaozen@gmail.com</a><br>
-    © 2026 Ozen Studio
-  </footer>
-</div>
+  <section class="cards" id="destek">
+    <div class="card">
+      <h4><span class="tr">Destek ve iletişim</span><span class="en">Support &amp; contact</span></h4>
+      <p><span class="tr">Bir sorun mu var, öneriniz mi? Bize yazın, en kısa sürede dönelim.</span><span class="en">Found a problem or have an idea? Write to us and we'll get back to you soon.</span></p>
+      <a class="more" href="mailto:tcsefaozen@gmail.com">tcsefaozen@gmail.com</a>
+    </div>
+    <div class="card">
+      <h4><span class="tr">Gizlilik</span><span class="en">Privacy</span></h4>
+      <p><span class="tr">Hesap açtırmayız; ilerlemeniz telefonunuzda kalır. Reklam, istatistik ve izinlerle ilgili her şey politikada.</span><span class="en">No accounts; your progress stays on your phone. Everything about ads, statistics and permissions is in our policy.</span></p>
+      <a class="more" href="privacy.html"><span class="tr">Gizlilik Politikası →</span><span class="en">Privacy Policy →</span></a>
+    </div>
+    <div class="card">
+      <h4><span class="tr">Verilerinizi silme</span><span class="en">Deleting your data</span></h4>
+      <p><span class="tr">Oyunu silmek telefondaki verileri siler. Çökme raporları ve istatistiklerin silinmesi için bize e-posta gönderin.</span><span class="en">Uninstalling removes the data on your phone. To have crash reports and statistics deleted, email us.</span></p>
+      <a class="more" href="privacy.html#tr"><span class="tr">Hakların →</span></a><a class="more" href="privacy.html#en"><span class="en">Your rights →</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot">
+    <a class="brand" href="#"><img src="assets/ozen-studio-logo.webp" alt="" width="36" height="36"><b>OZEN STUDIO</b></a>
+    <nav>
+      <a href="#oyunlar"><span class="tr">Oyunlar</span><span class="en">Games</span></a>
+      <a href="privacy.html"><span class="tr">Gizlilik</span><span class="en">Privacy</span></a>
+      <a href="mailto:tcsefaozen@gmail.com"><span class="tr">İletişim</span><span class="en">Contact</span></a>
+    </nav>
+    <span class="copy">© 2026 Ozen Studio</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btns = document.querySelectorAll('.lang button');
+    function paint() {
+      var l = document.documentElement.getAttribute('data-lang');
+      for (var i = 0; i < btns.length; i++) btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-set') === l ? 'true' : 'false');
+    }
+    for (var i = 0; i < btns.length; i++) btns[i].addEventListener('click', function () {
+      var l = this.getAttribute('data-set');
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.lang = l;
+      try { localStorage.setItem('ozen-lang', l); } catch (e) {}
+      paint();
+    });
+    paint();
+  })();
+</script>
 </body>
 </html>
